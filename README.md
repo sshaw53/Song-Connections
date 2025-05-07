@@ -21,6 +21,7 @@ To improve the performance of my algorithm and reduce the number of API calls, m
 
 ### Main Algorithm:
 - **Bidirectional BFS**: Reduces the depth of the BFS tree searching by simultaneously searching from both the start and end artists. This results in faster execution than standard BFS for large graphs.
+- **Secondary Algorithm - On-Demand Graph Construction**: dynamically builds the relevant portion of the graph as needed rather than the entire Spotify API Data. For each artist explored during BFS, the code iterates through all available albums and singles, collects every track to extract the list of contributing artists, and adds edges between the current artist and any listed collaborators.
 
 ### Data Structures:
 - **Graph / Map**: Each artist is a node and edges exists between two artists if they appear on a song together.
